@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Attandance",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

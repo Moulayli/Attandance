@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{student.firtName}} - {{student.lastName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{student.firtName}} - {{student.lastName}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked"> {{student.firtName}}  </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked"> {{student.lastName}} </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked"> {{student.parentEmail}} </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked"> {{student.parentPhone}}</ion-label>
+      </ion-item>
+      <ion-item>
+      </ion-item>
+    </ion-card-content>
+    <ion-button id="open-modal" expand="block" >Edit</ion-button>
+  </ion-card>
+
+  <ion-modal #modal trigger="open-modal" [presentingElement]="presentingElement">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="modal.dismiss()">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{student.firtName}} - {{student.lastName}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-label position="stacked">Nom  </ion-label>
+              
+              <ion-input value="{{student.firtName}}" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Prenom </ion-label>
+              <ion-input value="{{student.lastName}}" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Email </ion-label>
+              <ion-input value="{{student.parentEmail}}" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Phone</ion-label>
+              <ion-input value="{{student.parentPhone}}" ></ion-input>
+            </ion-item>
+            <ion-item>
+            </ion-item>
+            <ion-button id="open-modal" expand="block"
+            (click)="save()"
+            >Valider</ion-button>
+            <ion-button id="open-modal" expand="block"
+            (click)="modal.dismiss()"
+            >Annuler</ion-button>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+
+</ion-content>
